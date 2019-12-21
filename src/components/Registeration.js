@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { View, Text,StyleSheet,TouchableOpacity, Image, Alert,TextInput, Button,
 ScrollView,KeyboardAvoidingView } from 'react-native'
 import {Icon} from 'react-native-elements'
-class Account extends Component {
+import Header from './Header'
+class Registeration extends Component {
     static navigationOptions = {
        header:null
       }
@@ -128,12 +129,13 @@ class Account extends Component {
             }
     render() {
         return (
-         
-            <ScrollView style={{width:'100%',height:500,flexDirection:'column',flex:1,
-            backgroundColor:'white',paddingRight:0,marginBottom:10}}>
-              
-                <View style={{marginTop:25,justifyContent:'center',alignItems:'center'}}>
-                <Text style={{color:'#00b5ec',fontSize:25,fontStyle:'italic',fontWeight:'bold'}}>Login Form</Text></View>
+         <View style={{width:'100%',height:500,flexDirection:'column',flex:1,justifyContent:'flex-start',
+         alignItems:'center',
+         backgroundColor:'white',paddingRight:0,marginBottom:10}}>
+            <Header title='Registration'/>
+            <ScrollView  >
+                {/* <View style={{marginTop:25,justifyContent:'center',alignItems:'center'}}>
+                <Text style={{color:'#00b5ec',fontSize:25,fontStyle:'italic',fontWeight:'bold'}}>Login Form</Text></View> */}
 
 <View style={{flexDirection:'row',width:'100%',height:60,backgroundColor:'white',marginTop:20,justifyContent:'flex-start'}}>
 <View style={{backgroundColor:this.state.userBackgroundColor,width:50,height:45,marginTop:7,marginLeft:10,
@@ -209,16 +211,27 @@ justifyContent:'center',alignItems:'center'}}>
 <Text style={styles.styleText}>تسجيل الحساب</Text>
 </TouchableOpacity>
 </View>
+
+
+<View style={{width:'100%',height:60,backgroundColor:'white',marginTop:20,
+justifyContent:'center',alignItems:'center'}}>
+<TouchableOpacity style={styles.buttonStyle} onPress={() => this.props.navigation.navigate('Login')}>
+<Text style={styles.styleText}>Go To Login</Text>
+</TouchableOpacity>
+</View>
          </ScrollView>
+         </View>
+                   
         )
         }
     }
 
 const styles=StyleSheet.create({
     styleText:{
-        fontSize:15,
+        fontSize:17,
         paddingTop:10,
-        alignItems:'center'
+        alignItems:'center',
+        color:'white'
     },
     buttonStyle:{
         marginBottom: 20,
@@ -234,4 +247,4 @@ const styles=StyleSheet.create({
 
 })
 
-export default Account
+export default Registeration

@@ -52,7 +52,7 @@ class Appointments extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Header />
+                <Header title='Appointment' />
                 <View style={{width:'100%',height:500,flex:1,justifyContent:'center',alignItems:'center'}}>
                     <FlatList
                     data={this.state.doctorsAppointments}

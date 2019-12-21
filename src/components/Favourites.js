@@ -9,25 +9,25 @@ class Favourites extends Component {
     state = {
         listData: [{
             doctorName: 'mohamed halawany',
-            doctorJob: 'dentist',
-            doctorSpecialize: 'bio',
-            DoctorImg:require('./images/profile.jpg')
+            doctorJob: 'Orthopedic',
+            doctorSpecialize: 'Orthopedic',
+            DoctorImg:require('./images/doctor.jpg')
         }, {
             doctorName: 'Ahmed mohamed',
             doctorJob: 'surgery',
             doctorSpecialize: 'bio',
-            DoctorImg:require('./images/profile.jpg')
+            DoctorImg:require('./images/doctor2.jpg')
         },{
             doctorName: 'mohamed ALi',
             doctorJob: 'dentist',
             doctorSpecialize: 'bio',
-            DoctorImg:require('./images/profile.jpg')
+            DoctorImg:require('./images/doctor3.jpg')
         },
         {
             doctorName: 'mohamed Adel',
             doctorJob: 'surgery',
             doctorSpecialize: 'bio',
-            DoctorImg:require('./images/profile.jpg')
+            DoctorImg:require('./images/doctor4.jpg')
         }
     ]
     }
@@ -38,7 +38,7 @@ class Favourites extends Component {
     render() {
         return (
             <View style={styles.container} >
-                <Header />
+                <Header title='Favourites' />
                 <View style={{width:'100%',height:500,flex: 1,justifyContent:'center',alignItems:'center',}}>
                 <FlatList
                     data={this.state.listData}

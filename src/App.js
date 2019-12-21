@@ -2,14 +2,14 @@ import React from 'react'
 import{createBottomTabNavigator} from 'react-navigation-tabs'
 import{createStackNavigator} from 'react-navigation-stack'
 import {createAppContainer} from 'react-navigation'
-import ExploreScreen from './components/Explore'
+import LoginScreen from './components/Login'
 import AppointmentsScreen from './components/Appointments'
 import FavouritesScreen from './components/Favourites'
-import AccountScreen from './components/Account'
+import RegisterationScreen from './components/Registeration'
 import {Icon} from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/FontAwesome';
-const ExploreScreenStack=createStackNavigator({
-    Explore:ExploreScreen,
+const LoginScreenStack=createStackNavigator({
+    Login:LoginScreen,
 })
 
 const AppointmentsScreenStack=createStackNavigator({
@@ -20,15 +20,15 @@ const FavouritesScreenStack=createStackNavigator({
     Favourites:FavouritesScreen
 })
 
-const AccountScreenStack=createStackNavigator({
-    Account:AccountScreen
+const RegisterationScreenStack=createStackNavigator({
+    Registeration:RegisterationScreen
 })
 const AppNavigator=createBottomTabNavigator({
-    Explore:{
-     screen:ExploreScreenStack,
+    Login:{
+     screen:LoginScreenStack,
      navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-            <Icon name='search' type='feather' size={25}  color={tintColor}/>
+            <Icon name='log-in' type='feather' size={25}  color={tintColor}/>
         )
       },
     },
@@ -48,8 +48,8 @@ const AppNavigator=createBottomTabNavigator({
             )
          }
         },
-    Account:{screen:
-        AccountScreenStack,
+    Registeration:{screen:
+    RegisterationScreenStack,
         navigationOptions: {
             // tabBarIcon: ({focused}) =>
             //     <Icon name='settings' type='feather' size={25}  active={focused} />,
@@ -60,7 +60,7 @@ const AppNavigator=createBottomTabNavigator({
     }
 
 },{
-    initialRouteName:'Explore',
+    initialRouteName:'Login',
     tabBarOptions:{
      activeTintColor:'#00ccff',
     // inactiveTintColor:'gray'
